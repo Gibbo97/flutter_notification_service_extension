@@ -20,6 +20,7 @@ import UserNotifications
     _ application: UIApplication,
     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
   ) {
+    super.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
     apnsToken = deviceToken.map { String(format: "%02x", $0) }.joined()
   }
 
